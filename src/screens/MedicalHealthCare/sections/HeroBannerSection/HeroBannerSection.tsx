@@ -49,8 +49,8 @@ export const HeroBannerSection = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative w-full self-stretch bg-transparent">
-      <div className="w-full bg-[#615efc]">
+    <header className="relative w-full self-stretch  bg-transparent">
+      <div className="w-full bg-[#615efc] max-sm:hidden">
         <div className="mx-auto flex w-full max-w-[1760px] flex-col gap-2 px-4 py-2 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:py-0">
           <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-0 lg:gap-[50px]">
             {topBarItemsLeft.map((item) => {
@@ -186,10 +186,7 @@ export const HeroBannerSection = (): JSX.Element => {
 
         {mobileMenuOpen && (
           <div className="border-t border-[#ddd8f9] bg-white px-4 pb-6 pt-2 sm:px-6 lg:hidden">
-            <nav
-              aria-label="Mobile navigation"
-              className="flex flex-col"
-            >
+            <nav aria-label="Mobile navigation" className="flex flex-col">
               {navigationItems.map((item) => (
                 <button
                   key={item.label}

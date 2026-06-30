@@ -5,6 +5,7 @@ import { FooterCreditsSection } from "./sections/FooterCreditsSection";
 import { FooterLinksSection } from "./sections/FooterLinksSection";
 import { FreeConsultationSection } from "./sections/FreeConsultationSection";
 import { HeroBannerSection } from "./sections/HeroBannerSection/HeroBannerSection";
+import { InteractiveTeethSection } from "./sections/InteractiveTeethSection/InteractiveTeethSection";
 import { MedicalServicesSection } from "./sections/MedicalServicesSection";
 import { PatientRecommendationSection } from "./sections/PatientRecommendationSection/PatientRecommendationSection";
 import { PatientTestimonialsSection } from "./sections/PatientTestimonialsSection/PatientTestimonialsSection";
@@ -14,7 +15,9 @@ import { TeamShowcaseSection } from "./sections/TeamShowcaseSection/TeamShowcase
 
 const screenSections = [
   { key: "hero", component: <HeroBannerSection /> },
+
   { key: "quick-support", component: <QuickSupportActionsSection /> },
+  { key: "interactive-teeth", component: <InteractiveTeethSection /> },
   { key: "exceptional-care", component: <ExceptionalCareSection /> },
   { key: "medical-services", component: <MedicalServicesSection /> },
   {

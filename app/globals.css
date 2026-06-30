@@ -1,7 +1,3 @@
-/* Load full Syne + Rubik families so the literal font-family names
-   ('Syne' / 'Rubik') used throughout the components resolve correctly. */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Syne:wght@400..800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,6 +64,10 @@
       "rlig" 1,
       "calt" 1;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .animate-fade-in {
@@ -171,4 +171,71 @@
   to {
     transform: translateY(calc(-100% - var(--gap)));
   }
+}
+
+/* ===== Dental 3D Section Styles ===== */
+@layer components {
+  .dental-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  }
+
+  .dental-gradient-text {
+    background: linear-gradient(135deg, #615efc 0%, #8f8cff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.dental-blob-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(97, 94, 252, 0.1) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  border-radius: 50%;
+  animation: dental-float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dental-blob-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(89, 86, 255, 0.08) 0%, transparent 70%);
+  bottom: -100px;
+  left: -50px;
+  border-radius: 50%;
+  animation: dental-float 10s ease-in-out 3s infinite;
+  pointer-events: none;
+}
+
+.dental-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dental-canvas-container canvas {
+  outline: none;
+}
+
+@keyframes dental-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes dental-ping-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  75%, 100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes dental-shimmer-bar {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(250%); }
 }

@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dentist Template
+
+A Next.js dental clinic landing page featuring an interactive 3D teeth model with service-based material effects (whitening, veneers, braces, implants, cleaning).
+
+## Tech Stack
+
+- **Next.js 15** (App Router)
+- **React Three Fiber + Drei** — 3D rendering
+- **Three.js** — WebGL/GLB model
+- **Framer Motion** — animations
+- **Tailwind CSS** — styling
+- **TypeScript**
+
+## Prerequisites
+
+- Node.js 18+
+- npm 9+
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# 1. Clone the repo
+git clone <repo-url>
+cd dentist-template-1
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The 3D teeth model (`public/models/mouth.glb`) is committed to the repo — no extra download needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+app/
+  layout.tsx          # Root layout + providers
+  page.tsx            # Entry point → MedicalHealthCare screen
+  globals.css
 
-To learn more about Next.js, take a look at the following resources:
+src/
+  screens/
+    MedicalHealthCare/
+      MedicalHealthCare.tsx          # Main page composition
+      sections/
+        HeroBannerSection/           # Hero with headline + CTA
+        QuickSupportActionsSection/  # Quick action cards
+        InteractiveTeethSection/     # 3D model + service pills
+          components/
+            ServicePill.tsx          # Clickable service selector
+            InfoCard.tsx             # Floating info card
+            DentalCTAButton.tsx
+            LoadingSpinner.tsx
+            ModelLoader.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  components/
+    3d/
+      TeethModel.tsx       # Canvas + WebGL context recovery
+      SparkleParticles.tsx # Particle effect for whitening
+      BracesOverlay.tsx    # Braces mesh overlay
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  hooks/
+    useMousePosition.ts
 
-## Deploy on Vercel
+  lib/
+    serviceData.ts   # Service definitions (label, color, description)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  types/
+    three-fiber.d.ts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+public/
+  models/
+    mouth.glb        # 3D teeth model (6.6 MB, committed to git)
+```
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server at localhost:3000 |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+
+## 3D Model & Services
+
+The interactive section lets users cycle through dental services. Each one applies a different material effect to the teeth model:
+
+| Service | Effect |
+|---|---|
+| Whitening | Bright white + blue emissive glow + sparkle particles |
+| Veneers | Warm ivory + metallic sheen |
+| Cleaning | Mint green + fresh teal emissive |
+| Braces | Original tooth color + wire overlay mesh |
+| Implants | Cool blue + titanium metalness |
+
+WebGL context loss is handled automatically — the canvas silently remounts up to 3 times before showing a manual recovery button.
+
+## Deployment
+
+Deploy to Vercel in one click:
+
+```bash
+npx vercel
+```
+
+Or push to a GitHub repo connected to Vercel for automatic deploys on every push to `main`.

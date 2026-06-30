@@ -44,9 +44,9 @@ export const QuickSupportActionsSection = (): JSX.Element => {
       <div className="mx-auto w-full max-w-[1760px] px-4">
         <Card className="overflow-hidden rounded-none border-0 bg-transparent shadow-none">
           <CardContent className="p-0">
-            <div className="relative w-full bg-[url(https://c.animaapp.com/mqz82gwr21qAkL/img/container-1.png)] bg-contain bg-center bg-no-repeat px-4 py-12 sm:px-6 sm:py-[72px] md:px-10 lg:min-h-[798px] lg:px-16 xl:px-[110px]">
-              <div className="grid items-center gap-10 lg:min-h-[654px] lg:grid-cols-[minmax(0,815px)_minmax(0,537px)] lg:gap-6">
-                <header className="flex max-w-[815px] flex-col items-start">
+            <div className="relative w-full bg-[url(https://c.animaapp.com/mqz82gwr21qAkL/img/container-1.png)] bg-cover flex justify-between bg-center bg-no-repeat px-4 sm:px-8 lg:px-32 pt-8 lg:py-0 rounded-2xl my-2 mb-20">
+              <div className="flex flex-col  lg:flex-row items-center justify-between w-full gap-4 lg:gap-6">
+                <header className="flex flex-col items-start">
                   <div className="flex items-center gap-0.5">
                     <img
                       className="h-[26px] w-[26px]"
@@ -58,7 +58,7 @@ export const QuickSupportActionsSection = (): JSX.Element => {
                     </p>
                   </div>
                   <div className="mt-3 flex w-full flex-col items-start">
-                    <h2 className="[font-family:'Syne',Helvetica] text-[40px] font-bold leading-[1.05] tracking-[0] text-[#111032] sm:text-[64px] lg:text-[90px] lg:leading-[99px]">
+                    <h2 className="[font-family:'Syne',Helvetica] text-[36px] sm:text-[40px] font-bold leading-[1.05] tracking-[0] text-[#111032] lg:text-[90px] lg:leading-[99px]">
                       Your Health
                       <br />
                       Our Priority
@@ -71,7 +71,7 @@ export const QuickSupportActionsSection = (): JSX.Element => {
                       possible.
                     </p>
                   </div>
-                  <div className="pt-10">
+                  {/* <div className="pt-5 sm:pt-8 lg:pt-10">
                     <Card className="max-w-[520px] rounded-[33px] border border-solid border-[#615efc33] bg-white shadow-none">
                       <CardContent className="flex flex-col gap-3 p-1.5 sm:h-14 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:pl-[25px]">
                         <Select>
@@ -99,10 +99,10 @@ export const QuickSupportActionsSection = (): JSX.Element => {
                         </Button>
                       </CardContent>
                     </Card>
-                  </div>
+                  </div> */}
                 </header>
-                <div className="relative mx-auto flex h-full w-full max-w-[537px] items-end justify-center overflow-visible px-2 sm:px-6 lg:justify-end lg:px-0">
-                  <div className="relative h-[420px] w-full max-w-[537px] bg-[url(/dentist.png)] bg-contain bg-bottom bg-no-repeat sm:h-[560px] sm:bg-center lg:h-[571px]">
+                <div className="relative flex h-full w-full max-w-[537px] items-end justify-end max-lg:[clip-path:inset(-9999px_-9999px_0px_-9999px)] px-2 sm:px-6 lg:justify-end lg:px-0">
+                  <div className="relative h-[400px] w-full max-w-[537px] bg-[url(/dentist.png)] bg-contain bg-bottom bg-no-repeat sm:h-[420px] sm:bg-center lg:h-[560px] 2xl:h-[700px]">
                     {floatingBadges.map((badge) => (
                       <div key={badge.title} className={badge.wrapperClassName}>
                         <img
