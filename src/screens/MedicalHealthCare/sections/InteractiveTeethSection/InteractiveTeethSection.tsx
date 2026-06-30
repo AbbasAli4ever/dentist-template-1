@@ -193,7 +193,7 @@ export function InteractiveTeethSection() {
     : null;
 
   return (
-    <section className="relative flex flex-col h-auto max-sm:gap-8 items-center overflow-hidden bg-gradient-to-br from-[#fbfbff] via-[#f1f1ff] to-[#f4f3ff] pt-5 pb-5 lg:h-screen lg:pt-8">
+    <section className="relative flex flex-col h-auto max-sm:gap-8 items-center overflow-hidden bg-gradient-to-br from-[#fbfbff] via-[#f1f1ff] to-[#f4f3ff] pt-5 pb-5 lg:h-[700px] xl:h-[800px] lg:pt-8">
       <div className="dental-blob-1" aria-hidden="true" />
       <div className="dental-blob-2" aria-hidden="true" />
       <div
