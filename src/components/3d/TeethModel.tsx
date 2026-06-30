@@ -171,11 +171,12 @@ function SceneModel({ activeService }: { activeService: string | null }) {
             m.metalness = 0.0;
             break;
           case "braces":
-            m.color.set(orig.color);
-            m.emissive.set(orig.emissive);
-            m.emissiveIntensity = orig.emissiveIntensity;
-            m.roughness = orig.roughness;
-            m.metalness = orig.metalness;
+            // Braces don’t whiten — keep the stained baseline
+            m.color.set("#C8B87A");
+            m.emissive.set("#6B5A1A");
+            m.emissiveIntensity = 0.05;
+            m.roughness = 0.72;
+            m.metalness = 0.0;
             break;
           case "implants":
             m.color.set("#D0E4FF");
@@ -185,11 +186,12 @@ function SceneModel({ activeService }: { activeService: string | null }) {
             m.metalness = 0.55;
             break;
           default:
-            m.color.set(orig.color);
-            m.emissive.set(orig.emissive);
-            m.emissiveIntensity = orig.emissiveIntensity;
-            m.roughness = orig.roughness;
-            m.metalness = orig.metalness;
+            // Dirty / unselected baseline — yellowish stained teeth
+            m.color.set("#C8B87A");
+            m.emissive.set("#6B5A1A");
+            m.emissiveIntensity = 0.05;
+            m.roughness = 0.72;
+            m.metalness = 0.0;
             break;
         }
         m.needsUpdate = true;

@@ -138,14 +138,6 @@ function ActiveInfoCard({ service }: { service: ServiceData }) {
           WebkitBackdropFilter: "blur(20px)",
         }}
       >
-        {/* Top colour bar */}
-        {/* <div
-          className="absolute top-0 left-0 right-0 h-[3px] rounded-t-3xl"
-          style={{
-            background: `linear-gradient(90deg, ${service.color}, ${service.color}55)`,
-          }}
-        /> */}
-
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Icon */}
           <div
@@ -195,8 +187,10 @@ function ActiveInfoCard({ service }: { service: ServiceData }) {
 }
 
 export function InteractiveTeethSection() {
-  const [activeService, setActiveService] = useState<string>(services[0].id);
-  const activeServiceData = services.find((s) => s.id === activeService)!;
+  const [activeService, setActiveService] = useState<string | null>(null);
+  const activeServiceData = activeService
+    ? services.find((s) => s.id === activeService) ?? services[0]
+    : null;
 
   return (
     <section className="relative flex flex-col h-auto max-sm:gap-8 items-center overflow-hidden bg-gradient-to-br from-[#fbfbff] via-[#f1f1ff] to-[#f4f3ff] pt-5 pb-5 lg:h-screen lg:pt-8">
@@ -280,7 +274,9 @@ export function InteractiveTeethSection() {
         <div
           className="absolute inset-[12%] rounded-full pointer-events-none z-0"
           style={{
-            background: `radial-gradient(circle, ${activeServiceData.color}28 0%, ${activeServiceData.color}0d 50%, transparent 70%)`,
+            background: activeServiceData
+              ? `radial-gradient(circle, ${activeServiceData.color}28 0%, ${activeServiceData.color}0d 50%, transparent 70%)`
+              : "radial-gradient(circle, #C8B87A28 0%, #C8B87A0d 50%, transparent 70%)",
             filter: "blur(36px)",
             transition: "background 1s ease",
           }}
@@ -314,6 +310,35 @@ export function InteractiveTeethSection() {
             />
           </motion.div>
         ))}
+
+        {/* ── Active service info card — floats over the model at the bottom (desktop only) ── */}
+        <div className="absolute bottom-3 left-0 right-0 z-30 hidden lg:block pointer-events-none">
+          <AnimatePresence mode="wait">
+            {activeServiceData ? (
+              <motion.div
+                key={activeServiceData.id}
+                className="pointer-events-auto"
+                initial={{ opacity: 0, y: 14, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 300, damping: 26 }}
+              >
+                <ActiveInfoCard service={activeServiceData} />
+              </motion.div>
+            ) : (
+              <motion.p
+                key="prompt-desktop"
+                className="text-center text-sm text-[#9090b0] [font-family:'Rubik',Helvetica] px-4 pointer-events-auto"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.4 }}
+              >
+                👆 Select a service to see how it transforms your smile
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Service pills — mobile 2-column grid (below lg) */}
@@ -351,7 +376,20 @@ export function InteractiveTeethSection() {
         data-aos-delay={200}
       >
         <AnimatePresence mode="wait">
-          <ActiveInfoCard key={activeService} service={activeServiceData} />
+          {activeServiceData ? (
+            <ActiveInfoCard key={activeServiceData.id} service={activeServiceData} />
+          ) : (
+            <motion.p
+              key="prompt-mobile"
+              className="text-center text-sm text-[#9090b0] [font-family:'Rubik',Helvetica] px-4"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.4 }}
+            >
+              👆 Tap a service to see the transformation
+            </motion.p>
+          )}
         </AnimatePresence>
       </div>
     </section>
