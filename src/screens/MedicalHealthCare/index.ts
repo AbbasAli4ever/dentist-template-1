@@ -1,0 +1,1 @@
+export { MedicalHealthCare } from "./MedicalHealthCare";
