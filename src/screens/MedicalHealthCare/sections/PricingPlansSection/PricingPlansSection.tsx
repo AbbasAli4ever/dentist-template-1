@@ -45,7 +45,7 @@ export const PricingPlansSection = (): JSX.Element => {
                   "url(https://c.animaapp.com/mqz82gwr21qAkL/img/container-5.png)",
               }}
             >
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-start" data-aos="fade-up">
                 <h2
                   id="consulting-title"
                   className="[font-family:'Syne',Helvetica] text-4xl font-bold leading-[1.1] tracking-[0] text-white sm:text-5xl sm:leading-[52.8px]"
@@ -53,7 +53,11 @@ export const PricingPlansSection = (): JSX.Element => {
                   Book your Free Consulting
                 </h2>
               </div>
-              <form className="mt-5 flex w-full max-w-[508px] flex-col gap-4">
+              <form
+                className="mt-5 flex w-full max-w-[508px] flex-col gap-4"
+                data-aos="fade-up"
+                data-aos-delay={100}
+              >
                 <div className="grid gap-4 sm:grid-cols-2">
                   {topFields.map((field) => (
                     <Input
@@ -129,6 +133,8 @@ export const PricingPlansSection = (): JSX.Element => {
             </section>
             <aside
               aria-label="Medical consultation visual"
+              data-aos="fade-up"
+              data-aos-delay={150}
               className="min-h-[280px] bg-cover bg-center bg-no-repeat sm:min-h-[360px] md:min-h-[658px]"
               style={{
                 backgroundImage:

@@ -51,8 +51,8 @@ export const PatientRecommendationSection = (): JSX.Element => {
   return (
     <section className="relative w-full px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-[120px]">
       <div className="mx-auto max-w-[1310px]">
-        <div className="grid grid-cols-1 gap-y-[30px] md:grid-cols-2 xl:grid-cols-4">
-          <header className="xl:col-span-2 xl:pr-[22px]">
+        <div className="grid grid-cols-1 gap-y-[30px] md:grid-cols-2 lg:grid-cols-4">
+          <header className="lg:col-span-2 lg:pr-[22px]" data-aos="fade-up">
             <div className="flex max-w-[632.5px] flex-col items-start">
               <Badge
                 variant="outline"
@@ -75,9 +75,11 @@ export const PatientRecommendationSection = (): JSX.Element => {
               </div>
             </div>
           </header>
-          {serviceCards.slice(0, 2).map((service) => (
+          {serviceCards.slice(0, 2).map((service, index) => (
             <Card
               key={service.title}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="rounded-[10px] border border-[#615efc33] bg-white shadow-none"
             >
               <CardContent className="flex h-full flex-col items-start px-[25px] py-[30px]">
@@ -107,9 +109,11 @@ export const PatientRecommendationSection = (): JSX.Element => {
             </Card>
           ))}
 
-          {serviceCards.slice(2).map((service) => (
+          {serviceCards.slice(2).map((service, index) => (
             <Card
               key={service.title}
+              data-aos="fade-up"
+              data-aos-delay={(index + 2) * 100}
               className="rounded-[10px] border border-[#615efc33] bg-white shadow-none"
             >
               <CardContent className="flex h-full flex-col items-start px-[25px] py-[30px]">

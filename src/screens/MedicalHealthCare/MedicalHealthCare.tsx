@@ -35,7 +35,7 @@ const screenSections = [
 
 export const MedicalHealthCare = (): JSX.Element => {
   return (
-    <main className="w-full bg-white" data-model-id="2:2036">
+    <main className="lg-scale-wrapper w-full bg-white" data-model-id="2:2036">
       <div className="w-full">
         {screenSections.map((section) => (
           <section key={section.key} className="relative w-full">

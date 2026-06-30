@@ -8,7 +8,7 @@ export const MedicalServicesSection = (): JSX.Element => {
   return (
     <section className="relative w-full px-4 pb-16 sm:pb-20 md:px-6 lg:pb-[120px]">
       <div className="mx-auto grid w-full max-w-[1310px] grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,561px)_minmax(0,640px)] lg:gap-[94px]">
-        <div className="relative">
+        <div className="relative" data-aos="fade-up">
           <div className="relative overflow-hidden rounded-none">
             <img
               className="block h-auto w-full"
@@ -55,24 +55,33 @@ export const MedicalServicesSection = (): JSX.Element => {
         <div className="flex flex-col items-start pt-0 lg:pt-[30px]">
           <Badge
             variant="outline"
+            data-aos="fade-up"
             className="rounded-[30px] border-[#615efc33] px-4 py-[5px] [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-[#615efc]"
           >
             About Us
           </Badge>
-          <header className="flex w-full max-w-[640px] flex-col items-start pt-[21px]">
+          <header
+            data-aos="fade-up"
+            data-aos-delay={100}
+            className="flex w-full max-w-[640px] flex-col items-start pt-[21px]"
+          >
             <h2 className="[font-family:'Syne',Helvetica] text-[28px] font-bold leading-[1.1] tracking-[0] text-[#111032] sm:text-[34px] md:text-5xl md:leading-[52.8px]">
               Providing Exceptional <br className="hidden md:block" /> Healthcare
               with a focus <br className="hidden md:block" /> on patient.
             </h2>
           </header>
-          <div className="pt-5">
+          <div className="pt-5" data-aos="fade-up" data-aos-delay={200}>
             <p className="w-full max-w-[608px] [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-[#6b6b6b]">
               At Mediweb, our mission is to provide exceptional healthcare
               services with a focus on patient-centered care. We are dedicated
               to improving the health and well-being of our community through.
             </p>
           </div>
-          <div className="flex w-full max-w-[640px] flex-col gap-6 pt-10 sm:flex-row sm:items-center sm:justify-start sm:gap-[54px]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay={300}
+            className="flex w-full max-w-[640px] flex-col gap-6 pt-10 sm:flex-row sm:items-center sm:justify-start sm:gap-[54px]"
+          >
             <Button className="h-auto w-fit rounded-[100px] bg-[#615efc] px-[26px] py-[18px] [font-family:'Rubik',Helvetica] text-base font-normal leading-4 tracking-[0] text-white hover:bg-[#615efc]/90">
               <span>About Us</span>
               <img

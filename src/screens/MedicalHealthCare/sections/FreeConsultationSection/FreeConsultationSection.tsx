@@ -36,10 +36,10 @@ export const FreeConsultationSection = (): JSX.Element => {
   return (
     <section className="relative w-full self-stretch">
       <div className="mx-auto w-full max-w-[1760px] px-[7.5px]">
-        <div className="w-full rounded-[10px] bg-[#f1f1ff] px-4 py-[72px] sm:px-6 lg:px-10 xl:px-12 xl:py-[120px]">
+        <div className="w-full rounded-[10px] bg-[#f1f1ff] px-4 py-[72px] sm:px-6 lg:px-12 lg:py-[120px]">
           <div className="mx-auto grid w-full max-w-[1310px] grid-cols-1 items-end gap-10 lg:grid-cols-[minmax(0,540px)_minmax(0,648px)] lg:gap-[95px]">
             <article className="flex w-full flex-col items-start">
-              <header className="flex w-full flex-col items-start">
+              <header className="flex w-full flex-col items-start" data-aos="fade-up">
                 <Badge
                   variant="outline"
                   className="rounded-[30px] border-[#615efc33] bg-transparent px-4 py-[5px] [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] text-[#615efc] hover:bg-transparent"
@@ -58,9 +58,11 @@ export const FreeConsultationSection = (): JSX.Element => {
                 </div>
               </header>
               <div className="flex w-full flex-col items-start pt-10">
-                {features.map((feature) => (
+                {features.map((feature, index) => (
                   <Card
                     key={feature.title}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                     className="mt-0 w-full rounded-[20px] border border-solid border-[#615efc33] bg-transparent shadow-none [&:not(:first-child)]:mt-5"
                   >
                     <CardContent className="flex items-center gap-5 px-5 py-[22px]">
@@ -82,7 +84,11 @@ export const FreeConsultationSection = (): JSX.Element => {
                 ))}
               </div>
             </article>
-            <aside className="flex w-full justify-center lg:justify-start">
+            <aside
+              className="flex w-full justify-center lg:justify-start"
+              data-aos="fade-up"
+              data-aos-delay={150}
+            >
               <div className="relative w-full max-w-[648px]">
                 <div className="relative min-h-[420px] w-full sm:min-h-[520px] lg:min-h-[591px]">
                   <div className="absolute bottom-0 left-0 z-10 h-[100%] w-[69.9%] bg-[url(https://c.animaapp.com/mqz82gwr21qAkL/img/image--medicle-.png)] bg-cover bg-center bg-no-repeat" />

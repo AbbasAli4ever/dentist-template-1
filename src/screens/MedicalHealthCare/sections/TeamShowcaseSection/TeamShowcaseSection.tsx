@@ -49,7 +49,7 @@ export const TeamShowcaseSection = (): JSX.Element => {
   return (
     <section className="relative w-full px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-[120px]">
       <div className="mx-auto flex w-full max-w-[1310px] flex-col items-stretch">
-        <header className="flex flex-col items-center pb-[30px]">
+        <header className="flex flex-col items-center pb-[30px]" data-aos="fade-up">
           <Badge className="h-auto rounded-[30px] border border-[#615efc33] bg-transparent px-4 py-[5px] [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] text-[#615efc] hover:bg-transparent">
             Pricing Plan
           </Badge>
@@ -58,8 +58,13 @@ export const TeamShowcaseSection = (): JSX.Element => {
           </h2>
         </header>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-0">
-          {pricingPlans.map((plan) => (
-            <div key={plan.name} className="w-full px-0 lg:px-[35px]">
+          {pricingPlans.map((plan, index) => (
+            <div
+              key={plan.name}
+              className="w-full px-0 lg:px-[35px]"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <Card
                 className={`h-full rounded-[10px] border shadow-none ${
                   plan.featured

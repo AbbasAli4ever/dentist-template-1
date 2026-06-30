@@ -32,7 +32,7 @@ export const AppointmentCTASection = (): JSX.Element => {
   return (
     <section className="relative w-full px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-[120px]">
       <div className="mx-auto flex w-full max-w-[1310px] flex-col items-center">
-        <header className="flex w-full flex-col items-center">
+        <header className="flex w-full flex-col items-center" data-aos="fade-up">
           <div className="inline-flex items-center justify-center rounded-[30px] border border-solid border-[#615efc33] px-4 py-[5px]">
             <p className="[font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-[#615efc]">
               Client Feedback
@@ -45,11 +45,13 @@ export const AppointmentCTASection = (): JSX.Element => {
           </div>
         </header>
         <div className="mt-[30px] flex w-full flex-col items-center">
-          <div className="grid w-full max-w-[1295px] grid-cols-1 gap-[30px] md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid w-full max-w-[1295px] grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={`${testimonial.author}-${index}`}
                 className="rounded-[10px] border-0 bg-[#f1f1ff] shadow-none"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <CardContent className="flex h-full min-h-[337px] flex-col justify-between p-[31px]">
                   <div className="flex flex-col gap-8">
@@ -93,6 +95,7 @@ export const AppointmentCTASection = (): JSX.Element => {
             className="mt-12 flex items-center justify-center gap-2"
             role="tablist"
             aria-label="Testimonial pagination"
+            data-aos="fade-up"
           >
             {paginationDots.map((dot, index) => (
               <button

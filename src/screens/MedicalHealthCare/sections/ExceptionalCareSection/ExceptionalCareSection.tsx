@@ -28,9 +28,11 @@ export const ExceptionalCareSection = (): JSX.Element => {
     <section className="relative w-full self-stretch px-0 py-12 sm:py-16 lg:py-[100px]">
       <div className="mx-auto w-full max-w-[1310px] px-4 sm:px-0">
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-0">
-          {careItems.map((item) => (
+          {careItems.map((item, index) => (
             <Card
               key={item.imageAlt}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="rounded-[10px] border border-solid border-[#615efc33] bg-transparent shadow-none lg:mx-[15px]"
             >
               <CardContent className="flex items-start gap-3 px-4 py-5 sm:gap-5 sm:px-5 sm:py-[30px]">

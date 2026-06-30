@@ -41,14 +41,14 @@ export const FooterCreditsSection = (): JSX.Element => {
     <footer className="w-full bg-[#111032] px-4 pt-16 text-white sm:px-0 sm:pt-20 lg:pt-[105px]">
       <div className="mx-auto flex w-full max-w-[1310px] flex-col px-[7.5px]">
         <div className="flex w-full flex-col gap-8 pb-[30px] md:flex-row md:items-center md:justify-between">
-          <a href="/" className="inline-flex shrink-0">
+          <a href="/" data-aos="fade-up" className="inline-flex shrink-0">
             <img
               className="h-[41px] w-[182px]"
               alt="MediCure"
               src="https://c.animaapp.com/mqz82gwr21qAkL/img/link-11.svg"
             />
           </a>
-          <form className="w-full max-w-[418px]">
+          <form data-aos="fade-up" data-aos-delay={100} className="w-full max-w-[418px]">
             <div className="flex items-center rounded-[100px] border border-solid border-[#615efc33] p-[5px]">
               <Input
                 type="email"
@@ -70,8 +70,12 @@ export const FooterCreditsSection = (): JSX.Element => {
             aria-label="Footer"
             className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:justify-between"
           >
-            {footerColumns.map((column) => (
-              <section key={column.title}>
+            {footerColumns.map((column, index) => (
+              <section
+                key={column.title}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <header className="relative inline-flex flex-col items-start">
                   <h2 className="[font-family:'Syne',Helvetica] text-xl font-bold leading-6 tracking-[0] text-white">
                     {column.title}

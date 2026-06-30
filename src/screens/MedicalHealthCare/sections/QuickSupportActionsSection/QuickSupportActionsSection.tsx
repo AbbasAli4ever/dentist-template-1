@@ -47,7 +47,7 @@ export const QuickSupportActionsSection = (): JSX.Element => {
             <div className="relative w-full bg-[url(https://c.animaapp.com/mqz82gwr21qAkL/img/container-1.png)] bg-cover flex justify-between bg-center bg-no-repeat px-4 sm:px-8 lg:px-32 pt-8 lg:py-0 rounded-2xl my-2 mb-20">
               <div className="flex flex-col  lg:flex-row items-center justify-between w-full gap-4 lg:gap-6">
                 <header className="flex flex-col items-start">
-                  <div className="flex items-center gap-0.5">
+                  <div className="flex items-center gap-0.5" data-aos="fade-up">
                     <img
                       className="h-[26px] w-[26px]"
                       alt="Image icons"
@@ -57,14 +57,22 @@ export const QuickSupportActionsSection = (): JSX.Element => {
                       Your Health Our Priority
                     </p>
                   </div>
-                  <div className="mt-3 flex w-full flex-col items-start">
+                  <div
+                    className="mt-3 flex w-full flex-col items-start"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                  >
                     <h2 className="[font-family:'Syne',Helvetica] text-[36px] sm:text-[40px] font-bold leading-[1.05] tracking-[0] text-[#111032] lg:text-[90px] lg:leading-[99px]">
                       Your Health
                       <br />
                       Our Priority
                     </h2>
                   </div>
-                  <div className="flex max-w-[580px] flex-col items-start pt-5">
+                  <div
+                    className="flex max-w-[580px] flex-col items-start pt-5"
+                    data-aos="fade-up"
+                    data-aos-delay={200}
+                  >
                     <p className="[font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-[#111032]">
                       We provide comprehensive healthcare services with a
                       personal touch, ensuring you receive the best care
@@ -101,10 +109,19 @@ export const QuickSupportActionsSection = (): JSX.Element => {
                     </Card>
                   </div> */}
                 </header>
-                <div className="relative flex h-full w-full max-w-[537px] items-end justify-end max-lg:[clip-path:inset(-9999px_-9999px_0px_-9999px)] px-2 sm:px-6 lg:justify-end lg:px-0">
+                <div
+                  className="relative flex h-full w-full max-w-[537px] items-end justify-end max-lg:[clip-path:inset(-9999px_-9999px_0px_-9999px)] px-2 sm:px-6 lg:justify-end lg:px-0"
+                  data-aos="fade-up"
+                  data-aos-delay={200}
+                >
                   <div className="relative h-[400px] w-full max-w-[537px] bg-[url(/dentist.png)] bg-contain bg-bottom bg-no-repeat sm:h-[420px] sm:bg-center lg:h-[560px] 2xl:h-[700px]">
-                    {floatingBadges.map((badge) => (
-                      <div key={badge.title} className={badge.wrapperClassName}>
+                    {floatingBadges.map((badge, index) => (
+                      <div
+                        key={badge.title}
+                        className={badge.wrapperClassName}
+                        data-aos="fade-up"
+                        data-aos-delay={300 + index * 100}
+                      >
                         <img
                           className={badge.iconClassName}
                           alt={badge.title}

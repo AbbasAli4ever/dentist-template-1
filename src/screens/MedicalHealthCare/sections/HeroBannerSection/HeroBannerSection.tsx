@@ -53,12 +53,14 @@ export const HeroBannerSection = (): JSX.Element => {
       <div className="w-full bg-[#615efc] max-sm:hidden">
         <div className="mx-auto flex w-full max-w-[1760px] flex-col gap-2 px-4 py-2 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:py-0">
           <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-0 lg:gap-[50px]">
-            {topBarItemsLeft.map((item) => {
+            {topBarItemsLeft.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.label}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                   className="inline-flex items-center gap-[7px] px-0 py-2.5"
                 >
                   <Icon
@@ -73,7 +75,10 @@ export const HeroBannerSection = (): JSX.Element => {
             })}
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-0 lg:gap-[50px]">
-            <div className="inline-flex items-center gap-[7px] px-0 py-2.5">
+            <div
+              data-aos="fade-up"
+              className="inline-flex items-center gap-[7px] px-0 py-2.5"
+            >
               <PhoneIcon
                 className="h-[18px] w-[18px] text-white"
                 strokeWidth={1.75}
@@ -82,7 +87,11 @@ export const HeroBannerSection = (): JSX.Element => {
                 Emergency Line: 1-800-100-900
               </p>
             </div>
-            <div className="inline-flex items-center gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={100}
+              className="inline-flex items-center gap-5"
+            >
               <p className="[font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-white whitespace-nowrap">
                 Follow Us-
               </p>
@@ -90,13 +99,15 @@ export const HeroBannerSection = (): JSX.Element => {
                 aria-label="Social media"
                 className="inline-flex items-center gap-3"
               >
-                {socialLinks.map((item) => {
+                {socialLinks.map((item, index) => {
                   const Icon = item.icon;
 
                   return (
                     <button
                       key={item.label}
                       type="button"
+                      data-aos="fade-up"
+                      data-aos-delay={index * 100}
                       aria-label={item.label}
                       className="inline-flex h-[26px] w-[18px] items-center justify-center text-white transition-opacity hover:opacity-80"
                     >
@@ -110,8 +121,9 @@ export const HeroBannerSection = (): JSX.Element => {
         </div>
       </div>
       <div className="w-full bg-white">
-        <div className="mx-auto flex w-full max-w-[1760px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:h-[81px] lg:gap-6 lg:py-0 xl:gap-10">
+        <div className="mx-auto flex w-full max-w-[1760px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:h-[81px] lg:gap-10 lg:py-0">
           <img
+            data-aos="fade-up"
             className="h-12 w-auto shrink-0 object-contain sm:h-[60px] lg:h-[81px] lg:w-[182px]"
             alt="Mediweb logo"
             src="https://c.animaapp.com/mqz82gwr21qAkL/img/link-10.svg"
@@ -119,12 +131,14 @@ export const HeroBannerSection = (): JSX.Element => {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden items-center gap-x-4 lg:flex xl:gap-x-8 2xl:gap-x-[50px]"
+            className="hidden items-center gap-x-4 lg:flex lg:gap-x-8 2xl:gap-x-[50px]"
           >
-            {navigationItems.map((item) => (
+            {navigationItems.map((item, index) => (
               <button
                 key={item.label}
                 type="button"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className={`inline-flex items-center gap-1 py-[27px] text-left [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] whitespace-nowrap transition-colors ${
                   item.active
                     ? "text-[#5956ff]"
@@ -142,8 +156,11 @@ export const HeroBannerSection = (): JSX.Element => {
             ))}
           </nav>
 
-          <div className="hidden shrink-0 items-center gap-3 lg:flex xl:gap-5">
-            <div className="relative hidden w-44 xl:block xl:w-56 2xl:w-60">
+          <div
+            data-aos="fade-up"
+            className="hidden shrink-0 items-center gap-3 lg:flex lg:gap-5"
+          >
+            <div className="relative hidden w-44 lg:block lg:w-56 2xl:w-60">
               <Input
                 type="search"
                 aria-label="Search"
@@ -158,7 +175,7 @@ export const HeroBannerSection = (): JSX.Element => {
             </div>
             <Button
               type="button"
-              className="h-auto shrink-0 rounded-[100px] bg-[#615efc] px-5 py-[13px] [font-family:'Rubik',Helvetica] text-base font-normal leading-4 tracking-[0] whitespace-nowrap text-white hover:bg-[#5552f0] xl:px-[26px]"
+              className="h-auto shrink-0 rounded-[100px] bg-[#615efc] px-5 py-[13px] [font-family:'Rubik',Helvetica] text-base font-normal leading-4 tracking-[0] whitespace-nowrap text-white hover:bg-[#5552f0] lg:px-[26px]"
             >
               <span>Appointment</span>
               <img

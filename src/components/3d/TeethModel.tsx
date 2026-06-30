@@ -289,7 +289,7 @@ export function TeethModel({ activeService }: TeethModelProps) {
       }}
       camera={{ position: [0, 0, 3.3], fov: 50, near: 0.1, far: 100 }}
       dpr={[1, 1.5]}
-      style={{ background: "transparent", cursor: "grab" }}
+      style={{ background: "transparent", cursor: "grab"}}
       performance={{ min: 0.5 }}
       onCreated={({ gl }) => {
         gl.domElement.addEventListener(

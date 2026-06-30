@@ -44,7 +44,7 @@ export const PatientTestimonialsSection = (): JSX.Element => {
         <div className="rounded-[10px] bg-[#f1f1ff] py-16 sm:py-20 lg:py-[120px]">
           <div className="mx-auto w-full max-w-[1310px] px-4 sm:px-[15px]">
             <header className="flex flex-col gap-8 pb-[50px] lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-[416.22px]">
+              <div className="max-w-[416.22px]" data-aos="fade-up">
                 <Badge className="h-auto rounded-[30px] border border-solid border-[#615efc33] bg-transparent px-4 py-[5px] [font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] text-[#615efc] hover:bg-transparent">
                   Our Doctors
                 </Badge>
@@ -56,7 +56,7 @@ export const PatientTestimonialsSection = (): JSX.Element => {
                   </h2>
                 </div>
               </div>
-              <div className="max-w-[520px]">
+              <div className="max-w-[520px]" data-aos="fade-up" data-aos-delay={100}>
                 <p className="[font-family:'Rubik',Helvetica] text-base font-normal leading-[26px] tracking-[0] text-[#6b6b6b]">
                   our team of dedicated and highly skilled doctors is at the
                   heart of our commitment to providing exceptional medical care.
@@ -67,8 +67,13 @@ export const PatientTestimonialsSection = (): JSX.Element => {
             </header>
             <div className="flex flex-col items-center">
               <div className="grid w-full grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-[30px]">
-                {doctors.map((doctor) => (
-                  <article key={doctor.name} className="flex justify-center">
+                {doctors.map((doctor, index) => (
+                  <article
+                    key={doctor.name}
+                    className="flex justify-center"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
                     <Card className="w-full max-w-[298px] border-0 bg-transparent shadow-none">
                       <CardContent className="p-0">
                         <div className="w-full">

@@ -213,7 +213,10 @@ export function InteractiveTeethSection() {
       />
 
       {/* ── Heading ── */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 text-center flex-none">
+      <div
+        className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 text-center flex-none"
+        data-aos="fade-up"
+      >
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full dental-glass border border-[#ddd8f9] mb-2 lg:mb-3"
           initial={{ opacity: 0, y: -10 }}
@@ -228,7 +231,7 @@ export function InteractiveTeethSection() {
         </motion.div>
 
         <motion.h2
-          className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-6xl leading-[1.05] tracking-tight text-[#111032] [font-family:'Syne',Helvetica] mb-2 lg:mb-3"
+          className="font-bold text-2xl sm:text-3xl lg:text-6xl leading-[1.05] tracking-tight text-[#111032] [font-family:'Syne',Helvetica] mb-2 lg:mb-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -342,7 +345,11 @@ export function InteractiveTeethSection() {
       </div>
 
       {/* ── Active service info — sits below model, no overlap ── */}
-      <div className="relative z-10 w-full flex-none pb-2">
+      <div
+        className="relative z-10 w-full flex-none pb-2"
+        data-aos="fade-up"
+        data-aos-delay={200}
+      >
         <AnimatePresence mode="wait">
           <ActiveInfoCard key={activeService} service={activeServiceData} />
         </AnimatePresence>
